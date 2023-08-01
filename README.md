@@ -6,7 +6,7 @@
 2. Delayed Road Assistance
 
 ## Technology Used
-1. React.js
+1. [React.js](https://react.dev)
 
 ## Team
 1. Marvin
