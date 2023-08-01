@@ -5,6 +5,9 @@
 1. Traffic Congestion
 2. Delayed Road Assistance
 
+## Technology Used
+1. React.js
+
 ## Team
 1. Marvin
 2. En Tong
