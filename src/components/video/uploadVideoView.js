@@ -1,8 +1,11 @@
 import React from 'react';
+import VideoInput from "./videoInput";
+import "./videoStyles.css";
 
 const UploadVideoView = ({ state, handleInputChange, handleButtonClick }) => {
     return (
         <>
+            <br></br>
             <label>Enter Traffic:</label>
             <input type='text' id="trafficBox" value={state.traffic}
                 onChange={e => handleInputChange(e, 'traffic')}></input>
@@ -18,7 +21,13 @@ const UploadVideoView = ({ state, handleInputChange, handleButtonClick }) => {
                 onChange={e => handleInputChange(e, 'totalCar')}></input>
             <br></br><br></br>
 
-            <button id="insertBtn" onClick={handleButtonClick}>Upload Data</button>
+            <div className="video">
+                <label>Video Upload:</label>
+                <VideoInput width={400} height={300} />
+            </div>
+            <br></br><br></br>
+
+            <center><button id="insertBtn" onClick={handleButtonClick}>Upload Data</button></center>
         </>
     );
 }
