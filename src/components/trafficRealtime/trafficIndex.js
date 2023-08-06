@@ -9,9 +9,9 @@ export class RealTimeTrafficData extends React.Component{
         super(props);
         this.state = {
             db: database,
-            traffic:"",
-            reason: "",
-            totalCar: "",
+            lane: "",
+            accident: "",
+            totalCarCrashes: "",
             trafficData: []
         };
         // Bind the interface function to the class instance
@@ -45,8 +45,8 @@ export class RealTimeTrafficData extends React.Component{
         //         <tr>
         //             <td>{index}</td>
         //             <td>{row.key}</td>
-        //             <td>{row.data.Reason}</td>
-        //             <td>{row.data.TotalCar}</td>
+        //             <td>{row.data.Accident}</td>
+        //             <td>{row.data.TotalCarCrashes}</td>
         //         </tr>
         //     )
         // }) 
@@ -62,21 +62,21 @@ export class RealTimeTrafficData extends React.Component{
 
     insertData() {
         const data = {
-            traffic: this.state.traffic,
-            reason: this.state.reason,
-            totalCar: this.state.totalCar
+            lane: this.state.lane,
+            accident: this.state.accident,
+            totalCarCrashes: this.state.totalCarCrashes
         };
     
-        if (!data.traffic) {
-            alert("Please enter valid traffic data.");
+        if (!data.lane) {
+            alert("Please enter valid lane data.");
             return;
         }
     
-        const dbRef = ref(database, 'Traffic/' + data.traffic);
+        const dbRef = ref(database, 'Traffic/' + data.lane);
     
         set(dbRef, {
-            Reason: data.reason,
-            TotalCar: data.totalCar
+            Accident: data.accident,
+            TotalCarCrashes: data.totalCarCrashes
         })
         .then(() => { alert('data was added successfully'); })
         .catch((error) => { alert("There was an error, details: " + error); });

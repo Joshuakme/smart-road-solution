@@ -5,24 +5,24 @@ const TrafficView = ({ state }) => {
     return (
         <>
             <div>
-                <h3>Traffic Data</h3>
+                <h3>Alert Data</h3>
                 <Table>
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Traffic</th>
-                            <th>Reason</th>
-                            <th>Total cars</th>
+                            <th>Lane</th>
+                            <th>Accident</th>
+                            <th>Total Car Crashes</th>
                         </tr>
                     </thead>
                     <tbody>
                         {state.trafficData.map((row, index) => {
                             return (
                                 <tr>
-                                    <td>{index}</td>
-                                    <td>{row.key}</td>
-                                    <td>{row.data.Reason}</td>
-                                    <td>{row.data.TotalCar}</td>
+                                    <td>{index + 1}</td>
+                                    <td>Lane {row.key}</td>
+                                    <td>{row.data.Accident}</td>
+                                    <td>{row.data.TotalCarCrashes}</td>
                                 </tr>
                             )
                         })}

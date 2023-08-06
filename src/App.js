@@ -15,16 +15,16 @@ function App() {
   return (
     <>
     <Nav justify variant="tabs" activeKey={activeTab} onSelect={handleTabChange}>
-      <Nav.Item>
+      {/* <Nav.Item>
         <Nav.Link href="upload">Home</Nav.Link>
-      </Nav.Item>
+      </Nav.Item> */}
       <Nav.Item>
-        <Nav.Link eventKey="traffic">Traffic</Nav.Link>
+        <Nav.Link eventKey="accident">Accident Alert</Nav.Link>
       </Nav.Item>
     </Nav>
 
-      {activeTab === 'home' && <UploadTraffic />}
-      {activeTab === 'traffic' && <RealTimeTrafficData />}
+      {/* {activeTab === 'home' && <UploadTraffic />} */}
+      {activeTab === 'accident' && <RealTimeTrafficData />}
     </>
    
   );
